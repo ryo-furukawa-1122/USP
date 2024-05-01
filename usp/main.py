@@ -2,31 +2,23 @@ import flet as ft
 
 
 def main(page: ft.Page):
-    page.title = "US Parameters"
+    page.title = "USP"
     page.vertical_alignment = ft.MainAxisAlignment.CENTER
-    page.horizontal_alignment = ft.MainAxisAlignment.CENTER
-    page.adaptive = True
+    # page.horizontal_alignment = ft.MainAxisAlignment.CENTER
+    # page.adaptive = True
     page.appbar = ft.AppBar(
-        title=ft.Text("US Parameters"),
+        title=ft.Text("Ultrasound Parameters"),
+        center_title=True,
         bgcolor=ft.colors.with_opacity(0.05, ft.cupertino_colors.SYSTEM_BACKGROUND),
     )
 
-    txt_number = ft.TextField(value="0", text_align=ft.TextAlign.RIGHT, width=100)
-
-    def minus_click(e):
-        txt_number.value = str(int(txt_number.value) - 1)
-        page.update()
-
-    def plus_click(e):
-        txt_number.value = str(int(txt_number.value) + 1)
-        page.update()
-    
     def calculate(e):
         value = 0.0
-        i1.value = str(value)
+        i1.value = str(value + 0)
+        i2.value = str(value + 0)
         page.update()
     
-    btn = ft.ElevatedButton("Calculate")
+    btn = ft.ElevatedButton(text="Calculate", on_click=calculate, width=300)
     i1 = ft.TextField(value="0", text_align=ft.TextAlign.LEFT, width=100)
     i2 = ft.TextField(value="0", text_align=ft.TextAlign.LEFT, width=100)
 
@@ -38,7 +30,7 @@ def main(page: ft.Page):
                         # ft.Checkbox(value=False, label="Continuous Wave Mode"),
                         ft.Row(
                             [
-                                ft.Text("Wave Mode"),
+                                ft.Text("Wave Mode", width=100),
                                 ft.Dropdown(
                                     width=200,
                                     options=[
