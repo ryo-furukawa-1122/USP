@@ -6,8 +6,7 @@ import matplotlib.pyplot as plt
 def main(page: ft.Page):
     page.title = "USP"
     page.vertical_alignment = ft.MainAxisAlignment.CENTER
-    # page.horizontal_alignment = ft.MainAxisAlignment.CENTER
-    # page.adaptive = True
+    page.horizontal_alignment = ft.CrossAxisAlignment.CENTER
     page.scroll = True
     page.appbar = ft.AppBar(
         title=ft.Text("Ultrasound Parameters"),
@@ -61,64 +60,95 @@ def main(page: ft.Page):
             [
                 ft.Column(
                     [
-                        ft.Row(
-                            [
-                                ft.Text("Wave Mode", width=100),
-                                dd,
-                            ]
+                        ft.Card(
+                            content=ft.Container(
+                                content=ft.Column(
+                                    [
+                                        ft.Row(
+                                            [
+                                                ft.Text("Wave Mode", width=100),
+                                                dd,
+                                            ]
+                                        ),
+                                        ft.Row(
+                                            [
+                                                ft.Text("Amplitude (MPa):"),
+                                                amplitude,
+                                            ]
+                                        ),
+                                        ft.Row(
+                                            [
+                                                ft.Text("Center frequency (MHz):"),
+                                                frequency,
+                                            ]
+                                        ),
+                                        ft.Row(
+                                            [
+                                                ft.Text("Duty cycle (%):"),
+                                                dc,
+                                            ]
+                                        ),
+                                        ft.Row(
+                                            [
+                                                ft.Text("PRF (kHz):"),
+                                                prf,
+                                            ]
+                                        ),
+                                        ft.Row(
+                                            [
+                                                ft.Text("Density (kg/m^3):"),
+                                                rho,
+                                            ]
+                                        ),
+                                        ft.Row(
+                                            [
+                                                ft.Text("Speed of sound (m/s):"),
+                                                c,
+                                            ]
+                                        )
+                                    ],
+                                    alignment=ft.MainAxisAlignment.CENTER,
+                                ),
+                                padding=20,
+                                bgcolor=ft.colors.with_opacity(0.8, ft.colors.WHITE),
+                                border_radius=5,
+                            ),
+                            width=500,
+                            margin=20,
+                            elevation=5,
                         ),
-                        ft.Row(
-                            [
-                                ft.Text("Amplitude (MPa):"),
-                                amplitude,
-                            ]
-                        ),
-                        ft.Row(
-                            [
-                                ft.Text("Center frequency (MHz):"),
-                                frequency,
-                            ]
-                        ),
-                        ft.Row(
-                            [
-                                ft.Text("Duty cycle (%):"),
-                                dc,
-                            ]
-                        ),
-                        ft.Row(
-                            [
-                                ft.Text("PRF (kHz):"),
-                                prf,
-                            ]
-                        ),
-                        ft.Row(
-                            [
-                                ft.Text("Density (kg/m^3):"),
-                                rho,
-                            ]
-                        ),
-                        ft.Row(
-                            [
-                                ft.Text("Speed of sound (m/s):"),
-                                c,
-                            ]
-                        ),
-                        btn,
-                        ft.Row([
-                            ft.Text("Spatial-peak pulse-average intensity: "),
-                            i1text,
-                            ft.Text(f" (W/cm^2)"),
-                        ]),
-                        ft.Row([
-                            ft.Text("Spatial-peak temporal-average intensity: "),
-                            i2text,
-                            ft.Text(f" (W/cm^2)"),
-                        ])
+                        ft.Container(ft.Row([btn], alignment=ft.MainAxisAlignment.CENTER), width=500),
+                        ft.Card(
+                            content=ft.Container(
+                                content=ft.Column(
+                                    [
+                                        ft.Row([
+                                            ft.Text("Spatial-peak pulse-average intensity: "),
+                                            i1text,
+                                            ft.Text(f" (W/cm^2)"),
+                                        ]),
+                                        ft.Row([
+                                            ft.Text("Spatial-peak temporal-average intensity: "),
+                                            i2text,
+                                            ft.Text(f" (W/cm^2)"),
+                                        ])
+                                    ],
+                                ),
+                                padding=20,
+                                bgcolor=ft.colors.with_opacity(0.8, ft.colors.WHITE),
+                                border_radius=5,
+                            ),
+                            width=500,
+                            margin=20,
+                            elevation=5,
+                        )
                     ],
-                ),
+                    alignment=ft.MainAxisAlignment.CENTER,
+                )
+
             ],
             alignment=ft.MainAxisAlignment.CENTER,
-        ),
+        )
     )
 
 
