@@ -5,6 +5,9 @@ import matplotlib.pyplot as plt
 
 def main(page: ft.Page):
     page.title = "USP"
+    page.window_width = 800
+    page.window_height = 680
+    page.window_opacity = 0.9
     page.vertical_alignment = ft.MainAxisAlignment.CENTER
     page.horizontal_alignment = ft.CrossAxisAlignment.CENTER
     page.scroll = True
@@ -13,7 +16,6 @@ def main(page: ft.Page):
         center_title=True,
         bgcolor=ft.colors.with_opacity(0.05, ft.cupertino_colors.SYSTEM_BACKGROUND),
     )
-
     def calculate(e):
         tbd = (float(dc.value) / 100) / (float(prf.value) * 1e3)
         z = float(rho.value) * float(c.value)
@@ -114,7 +116,7 @@ def main(page: ft.Page):
                                 border_radius=5,
                             ),
                             width=500,
-                            margin=20,
+                            margin=10,
                             elevation=5,
                         ),
                         ft.Container(ft.Row([btn], alignment=ft.MainAxisAlignment.CENTER), width=500),
@@ -139,7 +141,7 @@ def main(page: ft.Page):
                                 border_radius=5,
                             ),
                             width=500,
-                            margin=20,
+                            margin=10,
                             elevation=5,
                         )
                     ],
