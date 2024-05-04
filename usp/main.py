@@ -1,7 +1,9 @@
 import flet as ft
 import numpy as np
 from scipy import integrate
-import matplotlib.pyplot as plt
+import os
+
+os.environ["OPENBLAS_NUM_THREADS"] = "1"
 
 def main(page: ft.Page):
     page.title = "USP"
