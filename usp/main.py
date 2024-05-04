@@ -9,7 +9,7 @@ def main(page: ft.Page):
     page.title = "USP"
     page.window_width = 800
     page.window_height = 680
-    page.window_opacity = 0.9
+    page.window_opacity = 0.925
     page.vertical_alignment = ft.MainAxisAlignment.CENTER
     page.horizontal_alignment = ft.CrossAxisAlignment.CENTER
     page.scroll = True
