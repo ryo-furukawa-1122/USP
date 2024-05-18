@@ -31,6 +31,6 @@ flet build <target_platform>
 3. Click "Calculate" botton
 
 <div style="display: flex; flex-direction: row; justify-content: space-between">
-    <img src="./usp/assets/uspScreen#1.png" width=100px>
-    <img src="./usp/assets/uspScreen#2.png" width=100px>
+    <img src="./usp/assets/uspScreen1.png" width=100px>
+    <img src="./usp/assets/uspScreen2.png" width=100px>
 </div>
