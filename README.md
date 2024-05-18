@@ -1,6 +1,6 @@
 <h1 align=center>
     <a href="https://github.com/ryo-furukawa-1122/USP">
-        <img src="./usp/assets/icon.png" width=100px>
+        <img src="./usp/assets/icon.png" width=200px>
     </a>
     <br>
     USP
@@ -31,6 +31,6 @@ flet build <target_platform>
 3. Click "Calculate" botton
 
 <div style="display: flex; flex-direction: row; justify-content: space-evenly">
-    <img src="./usp/assets/uspScreen1.png" width=100px>
-    <img src="./usp/assets/uspScreen2.png" width=100px>
+    <img src="./USP/assets/uspScreen1.png">
+    <img src="./USP/assets/uspScreen2.png">
 </div>
